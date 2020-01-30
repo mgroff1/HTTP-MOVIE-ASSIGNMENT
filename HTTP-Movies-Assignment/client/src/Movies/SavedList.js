@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import {CardShell} from './Styles';
 export default class SavedList extends Component {
   constructor(props) {
     super(props);
@@ -9,7 +10,7 @@ export default class SavedList extends Component {
 
   render() {
     return (
-      <div className="saved-list">
+      <CardShell>
         <h3>Saved Movies:</h3>
         {this.props.list.map(movie => {
           return (
@@ -28,7 +29,7 @@ export default class SavedList extends Component {
           <button className="home-button">
               <Link to="/add-movie">Add Movie</Link>
           </button>
-      </div>
+      </CardShell>
     );
   }
 }

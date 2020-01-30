@@ -5,7 +5,7 @@ import MovieList from "./Movies/MovieList";
 import Movie from "./Movies/Movie";
 import UpdateForm from "./Movies/UpdateForm";
 import AddForm from './Movies/AddForm';
-
+import {CardShell} from './Movies/Styles';
 const App = () => {
   const [savedList, setSavedList] = useState([]);
   const [movies, setMovies] = useState([]);
@@ -15,7 +15,7 @@ const App = () => {
   };
 
   return (
-    <>
+    <CardShell>
       <SavedList list={savedList} />
       <Route exact path="/" component={MovieList} />
       <Route path="/update-movie/:id" component={UpdateForm}/>
@@ -26,7 +26,7 @@ const App = () => {
         }}
       />
         <Route path="/add-movie" render={props => <AddForm {...props} setMovies={setMovies} />} />
-    </>
+    </CardShell>
   );
 };
 
